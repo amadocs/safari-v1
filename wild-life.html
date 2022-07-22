@@ -121,7 +121,103 @@
         </div>
 
     </div>
-</div>
+    </div>
+    
+    <div class="container">
+    <div class="row text-center my-4">
+      <div class="col-12">
+        <button class="btn btn-success" onclick="showMoreAnimals()">Show More...</button>
+      </div>
+    </div>
+    </div>
+
+    <div class="container" id="show-hide-animals" style="display: none">
+      <div class="row d-flex align-items-end ms-auto">
+      <div class="col">
+         
+          <div class="card text-center  p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/giraffe.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Giraffe-1.jpg" width="200" alt="" />test 1</a></p>
+                  <span class="bullet-green"></span><span class="animal-status">Common</span>
+                </p>
+              </div>
+          </div>
+          
+      </div>
+      <div class="col">
+          
+          <div class="card text-center p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/zebra.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Burchells_zebra-1.jpg" width="200" alt="" />test 1</a></p>
+                  <p>Text</p>
+                </p>
+              </div>
+          </div>
+          
+      </div>
+      <div class="col">
+          
+          <div class="card text-center p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/wildebeest.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Blue_wildebeest-1.jpg" width="200" alt="" />test 1</a></p>
+                  <p>Text</p>
+                </p>
+              </div>
+          </div>
+
+      </div>
+      <div class="col">
+          
+          <div class="card text-center p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/elephant.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/African_elephant-1.jpg" width="200" alt="" />test 1</a></p>
+                  <p>Text</p>
+                </p>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="col">
+          
+          <div class="card text-center p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/lion.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Lion-1.jpg" width="200" alt="" />test 1</a></p>
+                  <p>Text</p>
+                </p>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="col">
+          
+          <div class="card text-center p-4" style="width: 10rem;">
+              <img src="./assets/images/wild-life/leopard.png"  class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
+                  <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Leopard-1.jpg" width="200" alt="" />test 1</a></p>
+                  <p>Text</p>
+                </p>
+              </div>
+          </div>
+
+      </div>
+
+  
+      </div>
+    </div>
+
 
    
 
@@ -220,6 +316,18 @@ p.animal {
 }
 
 </style>
+
+<script>
+function showMoreAnimals() {
+  var x = document.getElementById("show-hide-animals");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>	
 		
