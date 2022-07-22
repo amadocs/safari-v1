@@ -1,0 +1,90 @@
+/* hero image start */
+
+.bgimage {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* .bgimage {
+    position: relative;
+    width:100%;
+    height:500px;
+    background: url('../images/national-park/chobe--3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+    margin-top:6rem;
+  }
+  .bgimage h4 {
+    color:white;
+    text-shadow:2px 2px #333;
+  }
+  .hero-content{
+    position: relative;
+    top:220px;
+  }
+
+.top-left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  color: #000;
+  width: fit-content;
+  padding: 10px 20px;
+}
+.top-left h4{
+  text-shadow:2px 2px #333;
+} */
+  /* hero image end */
+
+/* section1 */
+.title{
+  background-color: blanchedalmond;
+  padding: 10px;
+  width:100%;
+}
+
+
+/* season start */
+.season .col-lg-1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  /* rtl:begin:ignore */
+  .season .col-lg-1 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+ /* season end  */  
+
+
+
+
+.circle1, .circle2, .circle3 {
+  margin: 12px;
+  border-radius: 50%;
+  font-size: 15px;
+  line-height: 52px;
+  text-align: center;
+  color: #fff;
+  padding: 16px;
+ }
+.circle1{
+  background: #5f682e;
+}
+.circle2{
+  background: #979d70;
+}
+.circle3{
+  background: #6c4100;
+}

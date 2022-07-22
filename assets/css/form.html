@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+  <br><br>
+<!-- 
+  <p>Type 'correct' to validate.</p>
+  <form action="javascript:alert( 'success!' );">
+    <div>
+      <input type="text">
+      <input type="submit">
+    </div>
+  </form>
+  <span></span>
+   
+  <script>
+  $( "form" ).submit(function( event ) {
+    if ( $( "input" ).first().val() === "correct" ) {
+      $( "span" ).text( "Validated..." ).show();
+      return;
+    }
+   
+    $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+    event.preventDefault();
+  });
+  </script> -->
+
+  /**************/
+
+  <form class="was-validated">
+    <div class="mb-3">
+      <label for="validationTextarea" class="form-label">Textarea</label>
+      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+      <div class="invalid-feedback">
+        Please enter a message in the textarea.
+      </div>
+    </div>
+  
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+      <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+      <div class="invalid-feedback">Example invalid feedback text</div>
+    </div>
+  
+        
+  
+    <div class="mb-3">
+      <button class="btn btn-primary" id="submitButton" type="submit" disabled onclick="Hello()">Submit form</button>
+    </div>
+  </form>
+
+ <!-- <script>
+    $('btn').on("click",function(e){
+        
+    e.preventDefault();
+});
+ </script> -->
+
+ <script>
+    function Hello(){
+        alert("Hello");
+    }
+ </script>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+//   'use strict'
+
+  
+  const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+        
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+        
+      }
+      
+    form.classList.add('was-validated')
+ 
+      
+    }, false)
+
+    
+  })
+}
+
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

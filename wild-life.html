@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+</head>
+<body>
+
+<br><br><br><br><br><br><br>
+<!-- <div class="row">
+    <div class="col">
+        <div class="container-bg">
+            <img src="" alt="" style="width:100%;">
+            <div class="bottom-left">Bottom Left</div>
+            <div class="bottom-right">Bottom Right</div>
+            <div><p class="animal"><a href="#" ><img src="./assets/images/dear.jpg" class="bottom-left" width="200" alt="" />test 1</a></p></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="container-bg">
+            <img src="./assets/images/lion.jpg" alt="Snow" style="width:100%;">
+            <div class="bottom-left">Bottom Left</div>
+            <div class="bottom-right">Bottom Right</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="container-bg">
+            <img src="./assets/images/lion.jpg" alt="Snow" style="width:100%;">
+            <div class="bottom-left">Bottom Left</div>
+            <div class="bottom-right">Bottom Right</div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row align-items-end ms-auto">
+        <div class="col">
+           
+            <div class="card text-center  p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/giraffe.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Giraffe-1.jpg" width="200" alt="" />test 1</a></p>
+                    <span class="bullet-green"></span><span class="animal-status">Common</span>
+                  </p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col">
+            
+            <div class="card text-center p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/zebra.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Burchells_zebra-1.jpg" width="200" alt="" />test 1</a></p>
+                    <p>Text</p>
+                  </p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col">
+            
+            <div class="card text-center p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/wildebeest.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Blue_wildebeest-1.jpg" width="200" alt="" />test 1</a></p>
+                    <p>Text</p>
+                  </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            
+            <div class="card text-center p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/elephant.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/African_elephant-1.jpg" width="200" alt="" />test 1</a></p>
+                    <p>Text</p>
+                  </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">
+            
+            <div class="card text-center p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/lion.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Lion-1.jpg" width="200" alt="" />test 1</a></p>
+                    <p>Text</p>
+                  </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">
+            
+            <div class="card text-center p-4" style="width: 10rem;">
+                <img src="./assets/images/wild-life/leopard.png"  class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p class="animal"><a href="#" ><img src="./assets/images/wild-life/Leopard-1.jpg" width="200" alt="" />test 1</a></p>
+                    <p>Text</p>
+                  </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+   
+
+<style>
+
+.bullet-green{
+    height: 14px;
+    width: 14px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+    padding: 0px !important;
+    margin: 5px !important;
+    margin-left: -10px !important;
+}
+
+.animal-status{
+  width:fit-content;
+}
+ 
+p.animal a img {
+    display: none;
+    position: absolute;
+    left:0px;
+    top: 20px;
+    transition: 3s ease-in-out;
+}
+p.animal a {
+    display: inline-block;
+    position: relative;
+    margin-left:-100px;
+    
+}
+p.animal a img {
+    display: none;
+}
+p.animal a:hover img {
+    display: inherit;
+    border:5px solid rgb(99, 95, 95);
+    border-radius: 10px;
+    position: absolute;
+    top: -200px;
+    left:-82px;
+    /* transition-delay: 1.8s; */
+    
+}
+p.animal {
+    margin-left: 100px;
+}
+
+
+
+
+/* Container holding the image and the text */
+.container-bg {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>	
+		
+</body>
+</html>
