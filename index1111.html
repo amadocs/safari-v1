@@ -13,44 +13,35 @@
 
     <!--emailJS start-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        
-        
     <script type="text/javascript">
-      (function() {
-          // https://dashboard.emailjs.com/admin/account
-          emailjs.init('zzFSLis6xBwUd7HWs');
-      })();
-  </script>
-  
-  <script type="text/javascript">
-      window.onload = function() {
-          document.getElementById('contactForm').addEventListener('submit', function(event) {
-              event.preventDefault();
-              // generate a five digit number for the contact_number variable
-              this.contact_number.value = Math.random() * 100000 | 0;
-              // these IDs from the previous steps
-              emailjs.sendForm('contact_service', 'contactForm', this)
-                  .then(function() {
-                      console.log('SUCCESS!');
-                  }, function(error) {
-                      console.log('FAILED...', error);
-                  });
-          }); 
-      }
-  </script>
-
-
-<style>
-  .error{
-      color:#ff0000;
-  }
-</style>
-    
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('zzFSLis6xBwUd7HWs');
+        })();
+    </script>
+    <!-- <script src="/assets/js/email.js"></script> -->
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            }); 
+        }
+    </script>
     <!--emailJS end-->
    
 
     
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 
   <title>Explore Safaris</title>
 </head>
@@ -176,6 +167,21 @@
   </div>
   <!--Carousel end-->
 
+  <!--About start-->
+
+  <!-- <section class="bg-dark text-light text-center text-sm-start my-4">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between"> 
+            <div  class="px-4">
+                <h1>Your <span class="text-warning"> Heading</span></h1>
+                <p class="lead my-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint quo nobis!</p>
+                <button class="btn btn-primary btn-lg">Click Here</button>
+            </div>
+            <img src="assets/images/slede1.webp" alt="" class="img-fluid w-50 p-3" />
+        </div>
+    </div>
+</section> -->
+
 <!--About start-->
 <section class="p-5" id="about">
   <div class="container">
@@ -215,12 +221,11 @@
           <div class="col-md m-auto">
             <div class="card">
               <p class="card-text">
-                <div class="video-wrapper">
                 <div class="embed-responsive embed-responsive-16by9">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/__lYWslv7W4?start=90&autoplay=1&loop=1" width="100%" height="300" ></iframe>
-                  
+                  <!-- <iframe width=“560" height=“315” src=“https://www.youtube.com/embed/lvs68OKOquM” frameborder=“0” 
+                    allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe> -->
                 </div>
-              </div>
               </p>
           </div>                            
           </div>
@@ -338,12 +343,11 @@
           <h3 class="text-secondary mb-1 text-center"><span class="section-head">Contact</span></h3>
         </div>
          <div class="col-md-6">
-          <div class="container">
           <div class="text-left  mt-2 p-4 mb-4"><h4 class="ruler">Contact Details</h4>
             <p><b><i class="fa-solid fa-location-dot"></i> Address: </b><span>ABC, Washington, AAA Road</span></p>
-            <p><b><i class="fa-solid fa-phone"></i> Phone Number: +353 01 567432 </b><span><a href="tel:+000 000000">+000 000000</a></span></p>
-            <p><b><i class="fa-solid fa-envelope"></i> Email: explore-safaris@gmail.com</b><span><a href="mailto:testemail@gmail.com">testemail@gmail.com</a></span></p>
-          </div>
+            <p><b><i class="fa-solid fa-phone"></i> Phone Number: </b><span><a href="tel:+000 000000">+000 000000</a></span></p>
+            <p><b><i class="fa-solid fa-envelope"></i> Email: </b><span><a href="mailto:testemail@gmail.com">testemail@gmail.com</a></span></p>
+
            </div>
            
          </div>
@@ -351,57 +355,68 @@
             <div class="container py-4">
 
                 <!-- Bootstrap 5 starter form -->
-            
-                <form name="contactForm" id="contactForm" onsubmit="return validateForm()" action="contact-form.html" method="post">
- 
-                  <div class="row mx-3 g-2">
-                      <div class="col-6">
-                          <label  class="form-label">First Name</label>
-                          <input type="text" class="form-control" id="firstname" name="firstname">
-                          <div class="error" id="firstnameErr"></div>
-                      </div>
-                      <div class="col-6">
-                          <label  class="form-label">Last Name</label>
-                          <input type="text" class="form-control" id="lastname" name="lastname" >
-                          <div class="error" id="lastnameErr"></div>
-                      </div>
-                      <div class="col-6">
-                          <label class="form-label">Email Address</label>
-                          <input type="text" class="form-control" id="email" name="email" >
-                          <div class="error" id="emailErr"></div>
-                      </div>
-                      <div class="col-6">
-                          <label class="form-label">Phone Number</label>
-                          <input type="text" class="form-control" id="phonenumber" name="phonenumber"  maxlength="15">
-                          <div class="error" id="phonenumberErr"></div>
-                      </div>
-                      <div class="col-12">
-                          <label class="form-label">Subject</label>
-                          <input type="text" class="form-control" id="subject" name="subject">
-                          <div class="error" id="subjectErr"></div>
-                      </div>
-                      <div class="col-12">
-                          <label class="form-label" >Message</label>
-                          <textarea class="form-control" id="message" name="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
-                          <div class="error" id="messageErr"></div>     
-                      </div>
-                      <div class="col-12">
-                          <button type="submit" class="btn btn-lg btn-success">Submit
-
-                          </button>
-                      </div>
+                <form id="contact-form" name="contactForm" onsubmit="return validateForm()" method="post">
               
-                  </div>
-                 
-              </form>
-                
+                  <!-- Name input -->
+            <div class="row g-3">
+                <div class="col">
+                 <label class="form-label" for="firstname">First Name</label>
+                  <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name" aria-label="First name" >
+                  <div class="error" id="firstnameErr"></div>
+                </div>
+                <div class="col">
+                  <label class="form-label" for="lastname">Last Name</label>
+                  <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" aria-label="Last name" required>
+                  <div class="error" id="lastnameErr"></div>
+                </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="email" aria-label="email" required>
             </div>
+            <div class="col">
+              <label class="form-label" for="phonenumber">Phone Number</label>
+              <input type="text" id="phonenumber" name="phonenumber" class="form-control" placeholder="01 3564782" aria-label="phonenumber" required>
+            </div>
+          </div>
+
+                  <!-- Subject input -->
+                  <div class="mb-3">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input class="form-control" id="subject" name="subject" type="text" placeholder="subject" required />
+                  </div>
+              
+                  <!-- Message input -->
+                  <div class="mb-3">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" type="text" placeholder="Message" style="height: 10rem;" required></textarea>
+                  </div>
+              
+                  <!-- Form submissions success message -->
+                  <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">Form submission successful!</div>
+                  </div>
+                            
+                  <!-- Form submit button -->
+                  <!-- <div class="d-grid">
+                    <button class="btn btn-success btn-lg" id="submitButton" type="submit" >Submit</button>
+                  </div> -->
+                  <input type="submit" value="Submit">
+              
+                </form>
+
+               
+              </div>
               
              
              
          </div>
        </div>
-      </section>     
+      </section>
+      
+     
+
     <!--Contact-us end-->
   </section>
 
@@ -506,8 +521,7 @@ Remember that you may shoot more pictures than ever before in your life because 
 
 
 </body>
-<script src="./assets/js/script.js"></script>
+
+<script src="script.js"></script>
 
 </html>
-
-
