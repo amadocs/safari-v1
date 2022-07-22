@@ -1,23 +1,24 @@
- /* hero image start */
- .bgimage {
+/* hero image1 start */
+.bgimage1 {
     width:100%;
     height:500px;
-    background: url('../images/national-park/chobe--3.jpg');
+    /* background: url('../images/national-park/chobe--3.jpg'); */
+    background: url('../images/okavango/okavango-home.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
     position: relative;
     margin-top:6rem;
   }
-  .bgimage h4 {
+  .bgimage1 h4 {
     color:white;
     text-shadow:2px 2px #333;
   }
-  .hero-content{
+  .hero-content1 {
     position: absolute;
     text-align: center;
-    top:46%;
-    left: 37%;
+    top:38%;
+    left: 38%;
   
   }
   .top-left {
@@ -32,13 +33,13 @@
   .top-left h4{
   text-shadow:2px 2px #333;
   }
-  
-  .chobe-page {
+
+  .okavango-page {
     font-weight: 900;
     font-size: 40px;
     letter-spacing: 5px;
   }
-  
+    
   /* hero image end */
 
   .season-head {
