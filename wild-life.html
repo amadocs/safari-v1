@@ -126,7 +126,7 @@
     <div class="container">
     <div class="row text-center my-4">
       <div class="col-12">
-        <button class="btn btn-success" onclick="showMoreAnimals()">Show More...</button>
+        <button id="btn-show-hide-animals" class="btn btn-success" onclick="showMoreAnimals()">Show More...</button>
       </div>
     </div>
     </div>
@@ -320,12 +320,24 @@ p.animal {
 <script>
 function showMoreAnimals() {
   var x = document.getElementById("show-hide-animals");
+  var b = document.getElementById("btn-show-hide-animals");
   if (x.style.display === "none") {
-    x.style.display = "block";
+      x.style.display = "block";    
+      b.innerHTML = "Show Less";
+      
   } else {
     x.style.display = "none";
+    b.innerHTML = "Show More...";
   }
-}
+
+
+
+  
+  
+
+  }
+  
+  
 </script>
 
 
