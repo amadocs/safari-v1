@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Simple goole Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="map-canvas" style="width: 800px; height: 500px;">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+var map;
+var latlng;
+var infowindow;
+$(document).ready(function() {
+    //get data set from the backend in a json structure
+    var data = [{
+            "description": "Chobe National Park",
+            "location": "7C9H+QMG, Kakoaka, Botswana",
+            "latitude": "-18.666668",
+            "longitude": "24.500000"
+        },
+        {
+            "description": "Okavango Delta",
+            "location": "Botswana",
+            "latitude": "49.090210",
+            "longitude": "-123.065269"
+        }
+    ]
+    //if backend servie ready
+    // $.ajax({ //library for JS help front-end to talk back-end, without having to reload the page
+    //   url: "HelpMapper-backend.php",
+    //   async: true,
+    //   dataType: 'json', // is a language
+    //   success: function (data) {
+    //     console.log(data);
+    //     ViewCustInGoogleMap(data);
+    //   }
+    // }); 
+    // console.log(data);
+    ViewCustInGoogleMap(data);
+});
+function ViewCustInGoogleMap(data) {
+    var gm = google.maps; //create instance of google map
+    //add initial map option
+    var mapOptions = {
+        center: new google.maps.LatLng(-18.666668, 24.500000),  // Coimbatore = (11.0168445, 76.9558321)
+        zoom: 1,
+        
+    };
+    //bine html tag to show the google map and bind mapoptions
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    //create instance of google information windown
+    infowindow = new google.maps.InfoWindow();
+    var marker, i;
+    // var MarkerImg = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle.png";
+    // var MarkerImg2 = "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle_blue.png";
+    //loop through all the locations and point the mark in the google map
+    for (var i = 0; i < data.length; i++) {
+        marker = new gm.Marker({
+            position: new gm.LatLng(data[i]['latitude'], data[i]['longitude']),
+            map: map,
+            // icon: MarkerImg
+        });
+  
+        //add info for popup tooltip
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (
+                function(marker, i) {
+                    return function() {
+                        infowindow.setContent(data[i]['location'] + data[i]['description']);
+                        infowindow.open(map, marker);
+                    };
+                }
+            )(marker, i)
+        );
+    }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABcJlbxWNNPLE4L4UmNsr3Al6EmXQY2hQ&sensor=true"
+    type="text/javascript"></script>
+
+</body>
+</html>
