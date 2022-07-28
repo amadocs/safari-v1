@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <title>Simple goole Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
+    <meta charset="utf-8">
+</head>
+<body>
+Google Map API:
+    <div id="map-canvas" style="width: 100%; height: 600px;">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+var map;
+var InfoObj=[];
+var centerCords={
+  lat:-19.6324421,
+  lng:22.8989629
+};
+const icons = {
+    camp: {
+      icon: './assets/images/camp.png',
+    },
+    lodge: {
+      icon: './assets/images/lodge.png',
+    },
+  };
+
+  var markersOnMap = [
+{
+  placeName:'Pom Pom Camp',
+  LatLng:[{
+    lat:-19.5839496,
+    lng:22.8434128,
+  }],
+  type:'camp'
+},
+
+{
+  placeName:"Gunn's Camp",
+  LatLng:[{
+    lat:-19.5273432, 
+    lng:23.1422763,
+  }],
+  type:'camp'
+},
+
+{
+  placeName:'Xudum Okavango Delta Lodge',
+  LatLng:[{
+    lat:-19.6324421,
+    lng:22.8989629,
+  }],
+  type:'lodge'
+},
+
+{
+  placeName:'Nxabega Okavango Tented Camp',
+  LatLng:[{
+    lat:-19.4847889,
+    lng:22.794011,
+  }],
+  type:'camp'
+},
+
+{
+  placeName:'Xaranna Okavango Delta Camp',
+  LatLng:[{
+    lat:-19.7140699,
+    lng:22.885103,
+  }],
+  type:'camp'
+},
+
+];
+
+
+//  window.onload = function(){
+//    initMap();
+//  }
+
+function addMarkerInfo(){
+  for (var i = 0; i < markersOnMap.length; i++) {
+        const contentString = '<h3>' + markersOnMap[i].placeName + '</h3>'
+
+        const marker = new google.maps.Marker({
+            position: markersOnMap[i].LatLng[0],
+            icon:icons[markersOnMap[i].type].icon,
+            map: map,
+        });
+
+        var infowindow = new google.mas.InfoWindow({
+          content:contentString,
+        });
+
+         marker.addListener('click', function(){
+          closeOtherinfo();
+           infowindow.open(map,marker);
+           InfoObj[0] = infowindow;
+       });
+
+       function closeOtherinfo(){
+        InfoObj[0].set("marker",null);
+        InfoObj[0].close();
+        InfoObj[0].length = 0;
+       }
+
+
+      }
+}
+
+
+var latlng;
+var infowindow;
+ $(document).ready(function() {    
+   ViewCustInGoogleMap(markersOnMap);
+});
+function ViewCustInGoogleMap(markersOnMap) {
+    var gm = google.maps; //create instance of google map
+    //add initial map option
+    var mapOptions = {
+        center: centerCords, //new google.maps.LatLng(-19.6324421, 22.8989629),  // Coimbatore = (11.0168445, 76.9558321)
+        zoom: 10,
+        
+    };
+    //bine html tag to show the google map and bind mapoptions
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    //create instance of google information windown
+    infowindow = new google.maps.InfoWindow();
+    
+    addMarkerInfo();    
+
+
+    
+
+        //add info for popup tooltip
+        // google.maps.event.addListener(
+        //     marker,
+        //     'click',
+        //     (
+        //         function(marker, i) {
+        //             return function() {
+        //                 infowindow.setContent(infowindow.content);
+        //                 infowindow.open(map, marker);
+        //             };
+        //         }
+        //     )(marker, i)
+        // );
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABcJlbxWNNPLE4L4UmNsr3Al6EmXQY2hQ&sensor=true"
+    type="text/javascript"></script>
+
+</body>
+</html>

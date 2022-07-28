@@ -8,7 +8,20 @@ https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=b4573d2ecf25b6
 https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=b4573d2ecf25b6c2f532ec7d25ed457f
 
 
+References:
+maps , weather reference example from previous students: https://samc85.github.io/Milestone2-project/discover.html
+https://azimny86.github.io/Milestone-Project-2/
+https://carlabuongiorno.github.io/OceanThrills/activities.html
+https://gazzaj.github.io/CI-MS2-Discover-Kefalonia/map.html
 
+Google Maps API Tutorial | Custom Marker Icon | Multiple Info Window:
+https://www.youtube.com/watch?v=Xptz0GQ2DO4
+
+
+
+.fa-brands, .fab {
+color:#000;
+}
 Googel Map API-
 
 1. Firstly Go to Google Maps - https://console.cloud.google.com/
